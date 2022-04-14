@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# React Exam
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Due April 19, 2022 12:30 PM
+- Instructions
+- React atsiskaitymas
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Darysime tik frontend su React - backend'as yra pateiktas.
 
-### `npm start`
+Apie React: Pradedame nuo create-react-app, įsidiegiame styled-components, arba modulini css (CSS frameworkų naudoti negalime), react-router-dom ir kitus reikalingus modulius. Būtina naudoti DotEnv. Dizainas nesvarbu, bet stenkitės išlaikyti bendrą tvarką.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+BASE_URL = https://autumn-delicate-wilderness.glitch.me/
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Kokius puslapius sukurti?
 
-### `npm run build`
+### Register
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Šis puslapis turės meniu juostą (logotipas, login ir register nuorodos), formą su el. paštu ir slaptažodžiu – įvedus kreipiasi į serverį (https://autumn-delicate-wilderness.glitch.me/v1/auth/register). Sėkminga ar nesėkminga registracija išmeta notificationą (įskaičiuoti visus įmanomus error handlingus). Serveris grąžina tik du: 200 arba 400.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Login
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Šis puslapis turės meniu juostą (logotipas, login ir register nuorodos), formą su el. paštu ir slaptažodžiu – įvedus kreipiasi į serverį (https://autumn-delicate-wilderness.glitch.me/v1/auth/login). Jei sėkmingai – nukreipia į Home, jei ne – išmetą notification klaidą (įskaičiuoti visus įmanomus error handlingus). Serveris grąžina tik du: 200 arba 400.
 
-### `npm run eject`
+### Home (patekti galima tik prisijungus – router blocking)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Šis puslapis turės meniu juostą (logotipas, home ir add nuorodos <- skirtingai nei login/register puslapiuose) bei kortelėse (t.y. stačiakampiuose, dizainas nesvarbu) atvaizduos įrašus (atsisiųstus iš https://autumn-delicate-wilderness.glitch.me/v1/content/skills). Kol jie neužsikrovė – išmeta errorą. Jei nėra nei vieno įrašo – išmeta, kad nėra įrašų.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Add (patekti galima tik prisijungus – router blocking)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Šis puslapis turės meniu juostą (logotipas, home ir add nuorodos) bei formą (t.y. title – input text ir description - textarea), kuriuos užpildžius – išsiųs į serverį (https://autumn-delicate-wilderness.glitch.me/v1/content/skills). Bet kokį atsaką, sėkmingą ar ne, atvaizduojame su notificationu.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Užduoties įkėlimo instrukcijos
 
-## Learn More
+Instrukcijas, kaip valdyti GitHub repozitorijas rasite - https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories arba step-by-step žemiau.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Sukurti GitHub repozitoriją.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Instrukcijas, kaip susikurti GitHub repozitoriją rasite - https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-new-repository
 
-### Code Splitting
+- Pakeitimus daryti atskiroje šakoje (pvz. dev), kad būtų galima sukurti Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Kaip galima sukurti Pull Request galite sužinoti čia - https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
 
-### Analyzing the Bundle Size
+Naują šaką galima susikurti įvykdžius `git checkout -b dev` komandą terminale.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Kuriant sistemą pakeitimus nuolatos saugoti su pakeitimus su prasmingomis "commit" žinutėmis.
 
-### Making a Progressive Web App
+- Pabaigus projektą patikrinti ar visi pakeitimai yra nusiųsti į GitHub, sukurti Pull Request per GitHub puslapį į pagrindinę šaką (`main` arba `master`) ir pateikti nuorodą šiame "assignment".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Jeigu to padaryti nepavyks galite tiesiog įkelti archyvuotus failus.

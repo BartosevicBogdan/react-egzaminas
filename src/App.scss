@@ -1,0 +1,16 @@
+
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  
+  .header-logo {
+    width: 50px;
+  }
+  .nav-link {
+    margin: 1rem;
+    color: black;
+    text-decoration: none;
+  }
+}
+

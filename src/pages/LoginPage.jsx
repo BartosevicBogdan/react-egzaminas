@@ -1,7 +1,11 @@
+import AuthForm from "../components/AuthForm/AuthForm"
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <div>
+      <h1>Login</h1>
+      <AuthForm login/>
+    </div>
   )
 }
 

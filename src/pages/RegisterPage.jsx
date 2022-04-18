@@ -1,7 +1,11 @@
+import AuthForm from "../components/AuthForm/AuthForm"
 
 const RegisterPage = () => {
   return (
-    <div>RegisterPage</div>
+    <div>
+      <h1>Registration form</h1>
+      <AuthForm/>
+    </div>
   )
 }
 

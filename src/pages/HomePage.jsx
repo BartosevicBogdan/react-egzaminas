@@ -1,7 +1,13 @@
+import SkillList from "../components/SkillList/SkillList"
+import { print } from "../logic/fetch"
 
-const HomePage = () => {
+const HomePage = ({children, skillsState, setChangeSkillId, ModalScreenState, refreshSkillsState}) => {
+  console.log('setChangeSkillId', setChangeSkillId)
   return (
-    <div>HomePage</div>
+    <div>
+      <h1>Posted skills:</h1>
+      <SkillList skillsState={skillsState} setChangeSkillId={setChangeSkillId} refreshSkillsState={refreshSkillsState} ModalScreenState={ModalScreenState}/>
+    </div>
   )
 }
 

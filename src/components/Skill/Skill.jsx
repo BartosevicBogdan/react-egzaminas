@@ -31,7 +31,9 @@ function onChangeDescription(){
 
   return (
     <div className={css.style}>
-        <button onClick={onChangeTitle} >+</button>
+        <div className="action-btn">
+            <i  onClick={onChangeTitle} class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </div>
         <h2>{cardTitle} </h2>
         <p>{cardDescription}</p>
     </div>

@@ -1,11 +1,15 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { fetch_login, fetch_registration } from "../../logic/fetch"
+import AuthContext from "../../providers/AuthContext";
 import { setToken } from './../../utils/helper';
 
 
 const AuthForm = (props) => {
-        const history = useHistory()
+
+const authCtx =useContext(AuthContext);
+
+const history = useHistory()
 
 const [email, setEmail]=useState('')
 const [password, setPassword]=useState('')
@@ -50,7 +54,8 @@ async function fetch(dataToPass){
     }
     if(props.login === true && respone.msg === 'Successfully logged in'){
         setToken(respone.token)
-        history.push('/');
+        authCtx.login();
+        // history.push('/');
     }
 }
 

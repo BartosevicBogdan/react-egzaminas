@@ -5,6 +5,12 @@ const regURL = process.env.REACT_APP_NOT_AUTH_REG_LOCATION;
 const loginURL = process.env.REACT_APP_NOT_AUTH_LOG_LOCATION;
 const skillsURL = process.env.REACT_APP_NOT_SKILLS_LOCATION;
 
+// const baseURL = process.env.REACT_APP_NOT_SERVER_BASE_URL || 'https://autumn-delicate-wilderness.glitch.me/v1';
+// const regURL = process.env.REACT_APP_NOT_AUTH_REG_LOCATION || '/auth/register';
+// const loginURL = process.env.REACT_APP_NOT_AUTH_LOG_LOCATION || '/auth/login';
+// const skillsURL = process.env.REACT_APP_NOT_SKILLS_LOCATION || '/content/skills';
+
+//#region  old code
 // const login = {
 //   email: "testas.testas1@gmail.com",
 //   password: "secret123",
@@ -25,11 +31,12 @@ const skillsURL = process.env.REACT_APP_NOT_SKILLS_LOCATION;
 //   //   fetch_registration(login);
 //   //   push_Skills(testSkill);
 // }
+//#endregion
 
 async function pull_Skills() {
   try {
     const response = await fetch(
-      `https://autumn-delicate-wilderness.glitch.me/v1/content/skills`,
+      `${baseURL}${skillsURL}`,
       {
         method: "GET",
         headers: {
@@ -54,7 +61,7 @@ async function pull_Skills() {
 async function push_Skills(dataToSend) {
   try {
     const response = await fetch(
-      `https://autumn-delicate-wilderness.glitch.me/v1/content/skills`,
+      `${baseURL}${skillsURL}`,
       {
         method: "POST",
         headers: {
@@ -79,7 +86,7 @@ async function push_Skills(dataToSend) {
 async function fetch_login(userData) {
   try {
     const response = await fetch(
-      `https://autumn-delicate-wilderness.glitch.me/v1/auth/login`,
+      `${baseURL}${loginURL}`,
       {
         method: "POST",
         // mode: "no-cors",
@@ -105,7 +112,7 @@ async function fetch_login(userData) {
 async function fetch_registration(userData) {
   try {
     const response = await fetch(
-      `https://autumn-delicate-wilderness.glitch.me/v1/auth/register`,
+      `${baseURL}${regURL}`,
       {
         method: "POST",
         headers: {
@@ -114,7 +121,7 @@ async function fetch_registration(userData) {
         body: JSON.stringify(userData),
       }
     );
-    console.log(response.status);
+    // console.log(response.status);
     if (response.status === 200) {
       const data = await response.json();
       //   console.log(data);

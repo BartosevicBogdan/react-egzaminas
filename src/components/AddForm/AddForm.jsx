@@ -51,7 +51,7 @@ async function fetch(dataToPass){
         history.push('/')
     }
 } 
-
+ 
 function formSubmit(e){
     e.preventDefault();
     if(edit && changeSkillId){

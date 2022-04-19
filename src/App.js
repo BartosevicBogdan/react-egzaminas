@@ -62,10 +62,20 @@ console.log('baseURL', baseURL)
         <div className="container white-block-space">
           <Switch>
             <ProtectedRoute path={"/"} exact>
-              <HomePage skillsState={{skills, setSkills}} isUserLoggedIn={isUserLoggedIn} setChangeSkillId={setChangeSkillId} refreshSkillsState={{refreshSkills, setRefreshSkills}} ModalScreenState={{showModalScreen, setShowModalScreen}}/>
+              <HomePage 
+                  skillsState={{skills, setSkills}} 
+                  isUserLoggedIn={isUserLoggedIn} 
+                  setChangeSkillId={setChangeSkillId}
+                  refreshSkillsState={{refreshSkills, setRefreshSkills}} 
+                  ModalScreenState={{showModalScreen, setShowModalScreen}}
+                  />
             </ProtectedRoute>
             <ProtectedRoute path={"/add"}>
-              <AddPage notificationObj={{notificationBody, setNotificationBody, showNotification, setShowNotification}} refreshSkillsState={{refreshSkills, setRefreshSkills}} ModalScreenState={{showModalScreen, setShowModalScreen}}/>
+              <AddPage
+                  notificationObj={{notificationBody, setNotificationBody, showNotification, setShowNotification}}
+                  refreshSkillsState={{refreshSkills, setRefreshSkills}}
+                  ModalScreenState={{showModalScreen, setShowModalScreen}
+                  }/>
             </ProtectedRoute>
             <Route path={"/login"}>
               <LoginPage />
@@ -79,8 +89,16 @@ console.log('baseURL', baseURL)
           </Switch>
         </div>
         <Footer/>
-          <ModalScreen ModalScreenState={{showModalScreen, setShowModalScreen}} notificationObj={{notificationBody, setNotificationBody, showNotification, setShowNotification}} skillsState={{skills, setSkills}} refreshSkillsState={{refreshSkills, setRefreshSkills}} changeSkillId={changeSkillId}/>
-          <Notification notificationObj={{notificationBody, setNotificationBody, showNotification, setShowNotification}}/>
+          <ModalScreen 
+              ModalScreenState={{showModalScreen, setShowModalScreen}} 
+              notificationObj={{notificationBody, setNotificationBody, showNotification, setShowNotification}} 
+              skillsState={{skills, setSkills}} 
+              refreshSkillsState={{refreshSkills, setRefreshSkills}} 
+              changeSkillId={changeSkillId}
+          />
+          <Notification 
+              notificationObj={{notificationBody, setNotificationBody, showNotification, setShowNotification}}
+          />
       </div>
     </AuthContext.Provider>
   );

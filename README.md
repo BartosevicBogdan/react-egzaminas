@@ -12,7 +12,7 @@ Build front-end skills sharing app. App must include:
 # install
 
 1. npm i
-1. copy .env example to .env and enter your values
+1. rename.env example to .env and enter your values
 
 ## how to start
 

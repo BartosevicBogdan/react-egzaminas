@@ -1,4 +1,56 @@
-# React Exam
+
+# React_final_exam
+
+## task:
+
+Build front-end skills sharing app. App must include:
+  1. registration page.
+  1. log in page.
+  1. home page, there user can view his published skills. (Access only for clients)
+  1. skills add page, there user can make new skill record. (Access only for clients)
+
+# install
+
+1. npm i
+1. copy .env example to .env and enter your values
+
+## how to start
+
+1. npm start
+
+## dependancies
+- "react": "^18.0.0",
+- "react-dom": "^18.0.0",
+- "react-router-dom": "^5.3.0",
+- "react-scripts": "5.0.1",
+- "sass": "^1.50.0",
+- "styled-components": "^5.3.5",
+- "web-vitals": "^2.1.4"
+
+## devDependencies
+
+- "eslint": "^8.13.0",
+- "eslint-config-prettier": "^8.5.0",
+- "prettier": "^2.6.2"
+
+## Not patched bugs:
+- home page not display skills at first render, skills appear on home page screen only then  switching form add page to home page.
+
+## Extra features:
+- own realisation of modal screen
+- own realisation of notification alert
+- ability to change skill record on home screen (not makes changes at backend)
+- footer
+- own design
+
+## Future features
+- bug patching
+- pagination
+- save done skill record changes to local store and replace old records to new
+
+---
+---
+# React Exam - final egzam description in lithuanian
 
 - Due April 19, 2022 12:30 PM
 - Instructions

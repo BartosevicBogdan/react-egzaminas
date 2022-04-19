@@ -4,17 +4,9 @@ export function setToken(token) {
 }
 
 export function getToken() {
-  return localStorage.getItem("token");
+  const token = localStorage.getItem("token") 
+  return token? token : undefined;
 }
 export function removeToken() {
   return localStorage.removeItem('token');
-}
-
-export function repeat(times, word){
-  let sentence='';
-  for (let index = 0; index < times; index++) {
-    sentence += word;
-  }
-  console.log(sentence)
-  return sentence;
 }

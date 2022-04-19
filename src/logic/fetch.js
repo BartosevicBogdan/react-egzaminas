@@ -5,26 +5,26 @@ const regURL = process.env.REACT_APP_NOT_AUTH_REG_LOCATION;
 const loginURL = process.env.REACT_APP_NOT_AUTH_LOG_LOCATION;
 const skillsURL = process.env.REACT_APP_NOT_SKILLS_LOCATION;
 
-const login = {
-  email: "testas.testas1@gmail.com",
-  password: "secret123",
-};
-const testSkill = {
-  title: "Test rest",
-  description: "Lorem ipsum",
-};
+// const login = {
+//   email: "testas.testas1@gmail.com",
+//   password: "secret123",
+// };
+// const testSkill = {
+//   title: "Test rest",
+//   description: "Lorem ipsum",
+// };
 
-function print() {
-  console.log("baseURL", baseURL);
-  console.log("regURL", regURL);
-  console.log("loginURL", loginURL);
-  console.log("skillsURL", skillsURL);
-  console.log("skillsURL endpoint", `${baseURL}${skillsURL}`);
-  pull_Skills();
-  //   fetch_login(login);
-  //   fetch_registration(login);
-  //   push_Skills(testSkill);
-}
+// function print() {
+//   console.log("baseURL", baseURL);
+//   console.log("regURL", regURL);
+//   console.log("loginURL", loginURL);
+//   console.log("skillsURL", skillsURL);
+//   console.log("skillsURL endpoint", `${baseURL}${skillsURL}`);
+//   pull_Skills();
+//   //   fetch_login(login);
+//   //   fetch_registration(login);
+//   //   push_Skills(testSkill);
+// }
 
 async function pull_Skills() {
   try {
@@ -129,4 +129,4 @@ async function fetch_registration(userData) {
   }
 }
 
-export { fetch_registration, fetch_login, push_Skills, pull_Skills };
+export { fetch_registration, fetch_login, push_Skills, pull_Skills, baseURL};

@@ -1,10 +1,18 @@
 import { useState, useEffect} from "react"
+import { useHistory } from "react-router-dom"
 import { push_Skills } from "../../logic/fetch"
 
-const AddForm = ({edit, skillsState, changeSkillId, refreshSkillsState, notificationObj, ModalScreenState}) => {
+const AddForm = ({edit, skillsState, changeSkillId, refreshSkillsState, notificationObj, ModalScreenState,}) => {
 
+const history = useHistory()
 const [title, setTitle]=useState('')
 const [description, setDescription]=useState('')
+
+const [isButtonDisabled, setIsButtonDisabled]=useState(true)
+
+
+const [titleError, setTitleError] = useState(false)
+const [descriptionError, setDescriptionError] = useState(false)
 
 useEffect(()=>{
     if(edit && changeSkillId){
@@ -13,6 +21,7 @@ useEffect(()=>{
     setTitle(prevState => found.title)
     setDescription(prevState => found.description)
 }
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, [changeSkillId])
 
 function showNotification(){
@@ -38,6 +47,8 @@ async function fetch(dataToPass){
         setTitle(prevState => '')
         setDescription(prevState => '')
         showNotification()
+        refreshSkillsState.setRefreshSkills(prevState => !prevState)
+        history.push('/')
     }
 } 
 
@@ -50,15 +61,8 @@ function formSubmit(e){
         found.description=description;
         console.log('skillCopy', skillCopy);
         skillsState.setSkills(prevState => skillCopy);
-
-// console.log('ModalScreenState', ModalScreenState)
-// console.log('ModalScreenState showModalScreen', ModalScreenState.showModalScreen)
-// console.log('ModalScreenState setShowModalScreen', ModalScreenState.setShowModalScreen)
         ModalScreenState.setShowModalScreen(prevState => false);
-
         refreshSkillsState.setRefreshSkills(prevState => !prevState)
-        console.log('refresh refresh ', refreshSkillsState.refreshSkills)
-
     }else{
         const dataToSend={
             title,
@@ -68,18 +72,40 @@ function formSubmit(e){
     }
 }
 
+function buttonAvailableCheck(){
+    if(title.length>3 && description.length> 3){
+        setIsButtonDisabled(prevState => false)
+    }  else{
+        setIsButtonDisabled(prevState => true)
+    }
+}
+function checkErrors(){
+    title.length<4 ? setTitleError(prevState => true) : setTitleError(prevState => false);
+    description.length<4 ? setDescriptionError(prevState => true) : setDescriptionError(prevState => false);
+}
 
-
-
+function buttonOnMouseOver(){
+    buttonAvailableCheck();
+    checkErrors()
+}
 
   return (
     <form onSubmit={formSubmit}>
-        <label htmlFor="title">Title</label>
-        <input onChange={changeTitle} type="text" name='title' value={title} placeholder="title"/>
-        <label htmlFor="title">Description</label>
-        <textarea onChange={changeDescription} name="description" value={description} rows={description.length/42}></textarea>
-        <div className="submit-btn">
-            {edit ? <button type="submit">Make changes!</button> : <button type="submit">Public skill!</button>}
+
+        {!titleError
+        ?   <label htmlFor="title">Title:</label>
+        :   <label style={{"color":"red"}} htmlFor="title">Title must be minimum 4 symbol lenght</label>
+        }
+        <input onChange={changeTitle} type="text" name='title' value={title} placeholder="Title must be minimum 4 symbol lenght"/>
+
+        {!descriptionError
+        ?   <label htmlFor="descriptiom">Description:</label>
+        :   <label style={{"color":"red"}} htmlFor="descriptiom">Descriptiom must be minimum 4 symbol lenght</label>
+        }
+        <textarea onChange={changeDescription} name="description" value={description} rows={description.length/30} placeholder='Descriptiom must be minimum 4 symbol lenght'></textarea>
+
+        <div className="submit-btn" onMouseOver={buttonOnMouseOver}>
+            {edit ? <button disabled={isButtonDisabled} type="submit">Make changes!</button> : <button disabled={isButtonDisabled} type="submit">Public skill!</button>}
         </div>
     </form>
   )

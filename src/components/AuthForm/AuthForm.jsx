@@ -32,6 +32,7 @@ function buttonAvailableCheck(){
         setIsButtonDisabled(prevState => true)
     }
 }
+
 function checkErrors(){
     email.length<4 ? setEmailError(prevState => true) : setEmailError(prevState => false);
     password.length<4 ? setPasswordError(prevState => true) : setPasswordError(prevState => false);

@@ -136,3 +136,11 @@ form{
   display: flex;
   justify-content: end;
 }
+.styled-button{
+      padding: 1rem 2rem;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius: 50px 50px;
+      border: none;
+      background: linear-gradient(29deg, rgba(74, 161, 255, 1) 0%, rgba(131, 58, 180, 1) 65%, rgba(237, 0, 182, 1) 100%);
+      color:white;
+}

@@ -32,7 +32,7 @@ function onChangeDescription(){
   return (
     <div className={css.style}>
         <div className="action-btn">
-            <i  onClick={onChangeTitle} class="fa fa-pencil-square-o" aria-hidden="true"></i>
+            <i  onClick={onChangeTitle} className="fa fa-pencil-square-o" aria-hidden="true"></i>
         </div>
         <h2>{cardTitle} </h2>
         <p>{cardDescription}</p>

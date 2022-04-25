@@ -1,0 +1,34 @@
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/register
+Content-Type: application/json
+
+{
+    "email": "testas.testas@gmail.com",
+    "password": "secret123"
+
+}
+
+###
+
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "testas.testas@gmail.com",
+    "password": "secret123"
+
+}
+
+###
+POST https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE3LCJlbWFpbCI6InRlc3Rhcy50ZXN0YXNAZ21haWwuY29tIiwiaWF0IjoxNjQ5OTI1OTY2fQ.0Jtb8woneg_CVoJ93q-MAN7U02-F9ESvN_CAVqdy0f0
+
+{
+    "title": "Test rest",
+    "description": "Lorem ipsum"
+
+}
+###
+GET https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTE3LCJlbWFpbCI6InRlc3Rhcy50ZXN0YXNAZ21haWwuY29tIiwiaWF0IjoxNjQ5OTI1OTY2fQ.0Jtb8woneg_CVoJ93q-MAN7U02-F9ESvN_CAVqdy0f0

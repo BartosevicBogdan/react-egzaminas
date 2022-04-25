@@ -1,0 +1,13 @@
+.notification{
+    position: fixed;
+    right: 0;
+    top: 100px;
+    color: white;
+    display: flex;
+    padding: 2rem  5rem 2rem  2rem;
+    align-items: center;
+    border-top-left-radius: 2rem ;
+    border-bottom-left-radius: 2rem;
+    background: linear-gradient(29deg, rgba(74, 161, 255, 1) 0%, rgba(131, 58, 180, 1) 65%, rgba(237, 0, 182, 1) 100%);
+
+}
